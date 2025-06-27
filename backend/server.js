@@ -44,3 +44,10 @@ const start = async () => {
   };
   
   start();
+
+  await connectDB(process.env.MONGO_URI);
+  if(process.env.NODE_ENV !== "production"){
+      start();
+  }
+
+  export default server;
